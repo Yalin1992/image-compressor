@@ -1,0 +1,229 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #1d1d1f;
+    background-color: #fbfbfd;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    color: #1d1d1f;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+header p {
+    color: #86868b;
+    font-size: 1.2rem;
+}
+
+/* 主要内容区域 */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* 上传区域样式 */
+.upload-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+}
+
+.upload-box {
+    border: 2px dashed #86868b;
+    border-radius: 14px;
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: #0071e3;
+    background-color: rgba(0, 113, 227, 0.05);
+    transform: scale(1.01);
+}
+
+.upload-box img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.upload-box h3 {
+    font-size: 1.5rem;
+    color: #1d1d1f;
+    margin-bottom: 0.5rem;
+}
+
+.upload-box p {
+    color: #86868b;
+}
+
+/* 压缩设置区域 */
+.compress-settings {
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+.preview-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.original-image,
+.compressed-image {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+}
+
+.original-image h4,
+.compressed-image h4 {
+    font-size: 1.2rem;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+}
+
+.original-image img,
+.compressed-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.original-image p,
+.compressed-image p {
+    color: #86868b;
+    font-size: 0.95rem;
+}
+
+/* 设置区域 */
+.settings {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+}
+
+.settings label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: #1d1d1f;
+    font-weight: 500;
+}
+
+#qualitySlider {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    outline: none;
+}
+
+#qualitySlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #0071e3;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#qualitySlider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+#downloadBtn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #0071e3;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#downloadBtn:hover {
+    background-color: #0077ED;
+    transform: translateY(-1px);
+}
+
+#downloadBtn:active {
+    transform: translateY(0);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .preview-container {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+}
+
+/* 添加优雅的动画效果 */
+.upload-container,
+.compress-settings {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
